@@ -1,24 +1,36 @@
 <?php
-declare(strict_types=1);
 /**
  * Copyright © 2018 Stämpfli AG. All rights reserved.
  * @author marcel.hauri@staempfli.com
  */
-namespace Staempfli\Gdpr\Test\Unit\Model;
 
-use PHPUnit\Framework\TestCase;
+namespace Staempfli\Gdpr\Test\Unit\Block;
+
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Staempfli\Gdpr\Model\Config;
 
-final class ConfigTest extends TestCase
+abstract class AbstractBlockSetup extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @var Config
+     * @var ObjectManager
      */
-    private $config;
+    protected $objectManager;
+    /**
+     * @var \Magento\Framework\View\Element\Template\Context|\PHPUnit_Framework_MockObject_MockObject
+     */
+    protected $context;
+    /**
+     * @var \Staempfli\Gdpr\Model\Config|\PHPUnit_Framework_MockObject_MockObject
+     */
+    protected $config;
+
     public function setUp()
     {
+        $this->objectManager = new ObjectManager($this);
+        $this->context = $this->getMockBuilder(\Magento\Framework\View\Element\Template\Context::class)
+            ->disableOriginalConstructor()
+            ->getMock();
         $scopeConfigInterface = $this->getMockBuilder(ScopeConfigInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
@@ -29,10 +41,5 @@ final class ConfigTest extends TestCase
                 'scopeConfigInterface' => $scopeConfigInterface,
             ]
         );
-    }
-    public function testIsCookieConsentEnabled()
-    {
-        $result = $this->config->isCookieConsentEnabled();
-        $this->assertSame(false, $result);
     }
 }
