@@ -11,7 +11,8 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class Config
 {
-    const XML_PATH_GDPR_ENABLE_COOKIE_CONSENT = 'gdpr/cookie_consent/enable';
+    const XML_PATH_GDPR_ENABLE_COOKIE_CONSENT = 'gdpr/cookie/enabled';
+    const XML_PATH_GDPR_COOKIE_POSITION = 'gdpr/cookie/position';
 
     /**
      * @var ScopeConfigInterface
@@ -27,5 +28,10 @@ class Config
     public function isCookieConsentEnabled()
     {
         return (bool) $this->scopeConfig->isSetFlag(self::XML_PATH_GDPR_ENABLE_COOKIE_CONSENT);
+    }
+
+    public function getCookiePosition()
+    {
+        return $this->scopeConfig->getValue(self::XML_PATH_GDPR_COOKIE_POSITION);
     }
 }

@@ -16,6 +16,10 @@ class CookieConsent extends Template
      * @var Config
      */
     private $config;
+    /**
+     * @var bool
+     */
+    private $isStatic = false;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -26,8 +30,41 @@ class CookieConsent extends Template
         $this->config = $config;
     }
 
-    public function isCookieConsentEnabled()
+    public function isEnabled()
     {
         return $this->config->isCookieConsentEnabled();
+    }
+
+    public function getCookiePosition()
+    {
+        $position = $this->config->getCookiePosition();
+
+        if ($position === Config\Source\Position::POSITION_BANNER_TOP_PUSHDOWN) {
+            $position = 'top';
+            $this->isStatic = true;
+        }
+        return $position;
+    }
+
+    public function isStatic()
+    {
+        return $this->isStatic;
+    }
+
+    public function getCookieConsentConfiguration()
+    {
+        $config = ['palette' => [
+            'popup' => [
+                'background' => '#000'
+            ],
+            'button' => [
+                'background' => '#fff'
+            ]
+        ],
+            'position' => $this->getCookiePosition(),
+            'static' => $this->isStatic()
+        ];
+
+        return json_encode($config);
     }
 }
