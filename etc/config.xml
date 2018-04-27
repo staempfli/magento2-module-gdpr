@@ -10,6 +10,7 @@
         <gdpr>
             <cookie>
                 <enabled>0</enabled>
+                <position>bottom</position>
             </cookie>
         </gdpr>
     </default>
