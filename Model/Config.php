@@ -26,6 +26,6 @@ class Config
 
     public function isCookieConsentEnabled()
     {
-        return $this->scopeConfig->isSetFlag(self::XML_PATH_GDPR_ENABLE_COOKIE_CONSENT);
+        return (bool) $this->scopeConfig->isSetFlag(self::XML_PATH_GDPR_ENABLE_COOKIE_CONSENT);
     }
 }
