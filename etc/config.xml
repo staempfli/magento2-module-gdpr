@@ -11,6 +11,18 @@
             <cookie>
                 <enabled>0</enabled>
                 <position>bottom</position>
+                <layout>block</layout>
+                <message>This website uses cookies to ensure you get the best experience on our website.</message>
+                <dismiss>Got it!</dismiss>
+                <deny>Decline</deny>
+                <allow>Allow cookies</allow>
+                <link_text>Learn more</link_text>
+                <link_url>https://cookiesandyou.com/</link_url>
+                <palette_background>#000000</palette_background>
+                <palette_text>#ffffff</palette_text>
+                <button_background>#0000f6</button_background>
+                <button_text>#ffffff</button_text>
+                <button_border>#0000f6</button_border>
             </cookie>
         </gdpr>
     </default>
