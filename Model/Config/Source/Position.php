@@ -35,7 +35,7 @@ class Position implements ArrayInterface
                 ['value' => self::POSITION_BANNER_TOP, 'label' => __('Banner Top')],
                 ['value' => self::POSITION_BANNER_TOP_PUSHDOWN, 'label' => __('Banner Top (Pushdown)')],
                 ['value' => self::POSITION_FLOATING_LEFT, 'label' => __('Floating Left')],
-                ['value' => self::POSITION_FLOATING_LEFT, 'label' => __('Floating Right')],
+                ['value' => self::POSITION_FLOATING_RIGHT, 'label' => __('Floating Right')],
             ];
         }
         return $this->options;
