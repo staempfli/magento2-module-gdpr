@@ -8,22 +8,19 @@ declare(strict_types=1);
 namespace Staempfli\Gdpr\Block;
 
 use Magento\Framework\View\Element\Template;
-use Staempfli\Gdpr\Model\Config;
+use Staempfli\Gdpr\Model\Config\Cookie as CookieConfig;
+use Staempfli\Gdpr\Model\Config\Source\Position;
 
 class CookieConsent extends Template
 {
     /**
-     * @var Config
+     * @var CookieConfig
      */
     private $config;
-    /**
-     * @var bool
-     */
-    private $isStatic = false;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        Config $config,
+        CookieConfig $config,
         array $data = []
     ) {
         parent::__construct($context, $data);
@@ -35,36 +32,52 @@ class CookieConsent extends Template
         return $this->config->isCookieConsentEnabled();
     }
 
-    public function getCookiePosition()
+    public function getCookieConsentConfiguration()
     {
-        $position = $this->config->getCookiePosition();
+        $config = [
+            'palette' => [
+                'popup' => [
+                    'background' => $this->config->getPaletteBackgroundColor(),
+                    'text' => $this->config->getPaletteTextColor(),
+                ],
+                'button' => [
+                    'background' => $this->config->getButtonBackgroundColor(),
+                    'text' => $this->config->getButtonTextColor(),
+                    'border' =>$this->config->getButtonBorderColor(),
+                ]
+            ],
+            'content' => [
+                'message' => $this->config->getMessage(),
+                'dismiss' => $this->config->getDismissText(),
+                'allow' => $this->config->getAllowText(),
+                'deny' => $this->config->getDenyText(),
+                'link' => $this->config->getLinkText(),
+                'href' => $this->config->getLinkUrl()
+            ],
+            'position' => $this->getCookiePosition(),
+            'static' => $this->isStatic(),
+            'theme' => $this->config->getLayout(),
+            'type' => $this->config->getType(),
+        ];
 
-        if ($position === Config\Source\Position::POSITION_BANNER_TOP_PUSHDOWN) {
+        return json_encode($config);
+    }
+
+    private function getCookiePosition()
+    {
+        $position = $this->config->getPosition();
+
+        if ($position === Position::POSITION_BANNER_TOP_PUSHDOWN) {
             $position = 'top';
-            $this->isStatic = true;
         }
         return $position;
     }
 
-    public function isStatic()
+    private function isStatic()
     {
-        return $this->isStatic;
-    }
-
-    public function getCookieConsentConfiguration()
-    {
-        $config = ['palette' => [
-            'popup' => [
-                'background' => '#000'
-            ],
-            'button' => [
-                'background' => '#fff'
-            ]
-        ],
-            'position' => $this->getCookiePosition(),
-            'static' => $this->isStatic()
-        ];
-
-        return json_encode($config);
+        if ($this->config->getPosition() === Position::POSITION_BANNER_TOP_PUSHDOWN) {
+            return true;
+        }
+        return false;
     }
 }
