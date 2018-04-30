@@ -27,6 +27,10 @@ composer require staempfli/magento2-module-gdpr
   
 WORK IN PROGRESS  
 
+## Configuration
+
+[Cookie Consent](docs/cookie-consent.md)
+
 
 ## ToDo
 
