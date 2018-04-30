@@ -30,9 +30,15 @@ final class ConfigTest extends TestCase
             ]
         );
     }
-    public function testIsCookieConsentEnabled()
+    public function testGetValue()
     {
-        $result = $this->config->isCookieConsentEnabled();
+        $result = $this->config->getValue('test/value');
+        $this->assertSame('', $result);
+    }
+
+    public function testIsSetFlag()
+    {
+        $result = $this->config->isSetFlag('test/flag');
         $this->assertSame(false, $result);
     }
 }
