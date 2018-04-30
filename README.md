@@ -1,17 +1,18 @@
 
 # Magento 2 General Data Protection Regulation (GDPR)  
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b875b8a401a748b09f621705823dd148)](https://www.codacy.com/app/Staempfli/magento2-module-gdpr?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=staempfli/magento2-module-gdpr&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/staempfli/magento2-module-gdpr.svg?branch=develop)](https://travis-ci.org/staempfli/magento2-module-gdpr)
+[![Maintainability](https://api.codeclimate.com/v1/badges/064c156cf745f41674ba/maintainability)](https://codeclimate.com/github/staempfli/magento2-module-gdpr/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/064c156cf745f41674ba/test_coverage)](https://codeclimate.com/github/staempfli/magento2-module-gdpr/test_coverage)
+
 This Module assists shop owners to comply with European privacy regulations known as GDPR. 
 
 **Attention:**  
 
     THIS MODULE DOES NOT GUARANTEE YOUR SHOP FULLY COMPLY WITH GDPR.
     PLEASE CONTACT A GDPR CONSULTANT OR LAW FIRM TO ASSESS NECESSARY MEASURES.
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b875b8a401a748b09f621705823dd148)](https://www.codacy.com/app/Staempfli/magento2-module-gdpr?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=staempfli/magento2-module-gdpr&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://travis-ci.org/staempfli/magento2-module-gdpr.svg?branch=develop)](https://travis-ci.org/staempfli/magento2-module-gdpr)
-[![Maintainability](https://api.codeclimate.com/v1/badges/064c156cf745f41674ba/maintainability)](https://codeclimate.com/github/staempfli/magento2-module-gdpr/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/064c156cf745f41674ba/test_coverage)](https://codeclimate.com/github/staempfli/magento2-module-gdpr/test_coverage)  
+  
   
   
 ## Installation  
