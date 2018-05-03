@@ -1,11 +1,17 @@
 
 # Magento 2 General Data Protection Regulation (GDPR) Suite  
 
-This Module assists shop owners to comply with European privacy regulations known as GDPR. 
+Base Module for Staempfli Privacy modules.
+
+
+Includes (so far): 
+ - [Cookie Consent](https://gdpr-info.eu/recitals/no-30/): https://github.com/staempfli/magento2-module-cookie-consent
+
+This Suite assists shop owners to comply with European privacy regulations known as GDPR. 
 
 **Attention:**  
 
-    THIS MODULE DOES NOT GUARANTEE YOUR SHOP FULLY COMPLY WITH GDPR.
+    THIS SUITE DOES NOT GUARANTEE YOUR SHOP FULLY COMPLY WITH GDPR.
     PLEASE CONTACT A GDPR CONSULTANT OR LAW FIRM TO ASSESS NECESSARY MEASURES.
   
   
@@ -17,14 +23,6 @@ Install the module with composer:
 ```sh  
 composer require staempfli/magento2-module-gdpr  
 ```  
-  
-## Usage  
-  
-Base Module for Staempfli Privacy modules.
-
-
-Includes (so far): 
- - [Cookie Consent](https://gdpr-info.eu/recitals/no-30/): https://github.com/staempfli/magento2-module-cookie-consent
 
 
 ## ToDo
