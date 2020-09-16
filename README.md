@@ -1,8 +1,9 @@
 
 # Magento 2 General Data Protection Regulation (GDPR) Suite  
 
-Base Module for Staempfli Privacy modules.
+[![Project Status: Abandoned – Initial development has started, but there has not yet been a stable, usable release; the project has been abandoned and the author(s) do not intend on continuing development.](http://www.repostatus.org/badges/latest/abandoned.svg)](http://www.repostatus.org/#abandoned)
 
+Base Module for Staempfli Privacy modules.
 
 Includes (so far): 
  - [Cookie Consent](https://gdpr-info.eu/recitals/no-30/): https://github.com/staempfli/magento2-module-cookie-consent
